@@ -1,2 +1,2 @@
 # cod-battleship
-Juego hundir la flota colaboratibo en clase
+### Juego hundir la flota colaboratibo en clase
