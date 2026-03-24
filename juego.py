@@ -1,5 +1,6 @@
 from tablero import Tablero
 
+
 class Juego:
     def __init__(self):
         self.tablero = Tablero()
@@ -16,17 +17,18 @@ class Juego:
 
     def lanzar_ataque(self, x, y):
         print(f"\nAtaque en ({x},{y})")
-
         resultado = self.tablero.comprobar_impacto(x, y)
-
         self.mostrar_resultado(resultado)
 
     def jugar_demo(self):
+        # Disparo normal → agua
+        self.lanzar_ataque(0, 0)
+        # Primer disparo al portaaviones
         self.lanzar_ataque(1, 1)
-        self.lanzar_ataque(1, 2)
-        self.lanzar_ataque(1, 3)
-        self.lanzar_ataque(1, 4)
-        self.lanzar_ataque(1, 5)
+        # Repetir la misma casilla → "Ya disparaste aquí"
+        self.lanzar_ataque(1, 1)
+        # Hundir el submarino U-47 (1 sola vida)
+        self.lanzar_ataque(4, 6)
 
 
 if __name__ == "__main__":
